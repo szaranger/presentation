@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardHeader, CardContent, CardTitle } from "./components/ui/card";
-import { ArrowRight, Users, Cpu, BarChart, Wrench, TrendingUp, Handshake, Lightbulb, Trophy } from "lucide-react";
+import { Users, Cpu, BarChart, Wrench, TrendingUp, Handshake, Lightbulb, Trophy } from "lucide-react";
 
 interface RoadmapSlide {
   title: string;
