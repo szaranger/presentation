@@ -76,29 +76,32 @@ export function RoadmapPresentation({ className }: RoadmapPresentationProps): Re
   ];
 
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 p-6 ${className || ''}`}>
-      {roadmapData.map((slide: RoadmapSlide, index: number) => (
-        <Card key={index} className={`${slide.bgColor} ${slide.borderColor}`}>
-          <CardHeader>
-            <CardTitle className="text-xl font-bold">{slide.title}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="italic mb-4">{slide.subtitle}</p>
-            {slide.items.map((item, itemIndex) => {
-              const IconComponent = item.icon;
-              return (
-                <div key={itemIndex} className="flex items-center gap-3 mb-2">
-                  <IconComponent className={slide.iconColor} />
-                  {item.text}
-                </div>
-              );
-            })}
-            <div className={`${slide.bgColor.replace('bg-', 'bg-').replace('-50', '-100')} rounded p-2 mt-4 font-semibold`}>
-              {slide.highlight}
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
+    <>
+      <h1 className="text-2xl font-bold w-full text-center pb-6">Roadmap</h1>
+      <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 p-6 ${className || ''}`}>
+        {roadmapData.map((slide: RoadmapSlide, index: number) => (
+          <Card key={index} className={`${slide.bgColor} ${slide.borderColor}`}>
+            <CardHeader>
+              <CardTitle className="text-xl font-bold">{slide.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="italic mb-4">{slide.subtitle}</p>
+              {slide.items.map((item, itemIndex) => {
+                const IconComponent = item.icon;
+                return (
+                  <div key={itemIndex} className="flex items-center gap-3 mb-2">
+                    <IconComponent className={slide.iconColor} />
+                    {item.text}
+                  </div>
+                );
+              })}
+              <div className={`${slide.bgColor.replace('bg-', 'bg-').replace('-50', '-100')} rounded p-2 mt-4 font-semibold`}>
+                {slide.highlight}
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </>
   );
 }
